@@ -29,14 +29,14 @@ Bankapp
 							
 							$scope.add = function() {
 					
-								if(!$scope.newBankForm.blz.$isInvalid|$scope.newBankForm.blz.$dirty){
+								if($scope.blzform.blz.$valid && $scope.blzform.blz.$dirty){
 								$http({
 									withCredentials : false,
 									method : 'post',
 									url : 'http://localhost:8080/bank-swt-neu-vor-14/rest/banktut',
 									data : {
 										name : $scope.name,
-										sortCode : $scope.newBankForm.blz.$viewValue
+										sortCode : $scope.blzform.blz.$viewValue
 									}
 								
 								}).success(function() {

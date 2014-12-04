@@ -24,10 +24,12 @@
 				<form name="newBankForm">
 					name: <input ng-model="name" placeholder="Enter a Bankname here">
 					
-					<div ng-include='"Templates/blzInput.html"'></div>
+				</form>
+				<form name=blzform>
+				<div ng-include='"Templates/blzInput.html"'></div>
+				</form>
 					<button ng-click="add()">addtestBank</button>
 					<button ng-click="refresh()">refresh</button>
-				</form>
 				<p></p>
 				id: <input ng-model="id" type="number"
 					placeholder="Enter a Bankid here">
