@@ -13,7 +13,7 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-lg-3">
 				<!--Sidebar content-->
 
 				Search: <input ng-model="query"> Sort by: <select
@@ -28,6 +28,7 @@
 				
 				<!-- Input of a Template with function -->
 				<form name=blzInput><div ng-include='"Templates/blzInput.html"'></div></form>
+				
 					<button ng-click="add()">addtestBank</button>
 					<button ng-click="refresh()">refresh</button>
 				<p></p>
@@ -37,7 +38,7 @@
 			</div>
 
 
-			<div class="col-md-10">
+			<div class="col-lg-6">
 				<!--Body content-->
 				<p>{{status}}</p>
 				<ul ng-class="banks">
