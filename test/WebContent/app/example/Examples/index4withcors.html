@@ -30,7 +30,7 @@
 				<p>{{status}}</p>
 				<ul ng-class="phones">
 					
-					<li ng-repeat="phone in phones | orderBy:orderProp">
+					<li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
 						<span>{{phone.Name}}</span>
 						<p>{{phone.City}}</p>
 						<p>age {{phone.Country}}</p>
