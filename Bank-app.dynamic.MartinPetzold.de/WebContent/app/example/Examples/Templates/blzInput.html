@@ -1,13 +1,10 @@
-<form name="blzform">
-blz: <input ng-model="blz" name="blz" type="number" min="0"
+<form name="blzInput">
+	blz: <input ng-model="blz" name="blz" type="number" min="0"
 		ngMinlength="5" minlength="5" ngMaxlength="10" maxlength="10"
-		placeholder="Enter a BLZ here"> <span class="error"
-		ng-show="blzform.blz.$error.maxlength"> to long!</span> <span
-		class="error" ng-show="blzform.blz.$error.minlength"> to
-		short!</span>
-		
-	<p
-		ng-if="blzform.blz.$error.maxlength==null && blzform.blz.$error.minlength==null">{{10-blzform.blz.$viewValue.length}}
-		remaining </p>
-	<p>{{!blzform.blz.$invalid}} validate blz </p>
-</form>	
+		placeholder="Enter a BLZ here"> 
+		<span class="error"ng-show="blzInput.blz.$error.maxlength"> to long!</span> 
+		<span class="error" ng-show="blzInput.blz.$error.minlength"> to short!</span>
+		<p ng-if="blzInput.blz.$error.maxlength==null && blzInput.blz.$error.minlength==null">
+		{{10-blzInput.blz.$viewValue.length}} remaining</p>
+		<p>{{!blzInput.blz.$invalid}} validate blz</p>
+</form>
