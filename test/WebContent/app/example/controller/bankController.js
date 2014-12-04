@@ -28,14 +28,28 @@ Bankapp
 							$scope.orderProp = 'name';
 							
 							$scope.add = function() {
+					
+								if(!$scope.newBankForm.blz.$isInvalid|$scope.newBankForm.blz.$dirty){
 								$http({
 									withCredentials : false,
 									method : 'post',
 									url : 'http://localhost:8080/bank-swt-neu-vor-14/rest/banktut',
 									data : {
 										name : $scope.name,
-										sortCode : $scope.blz
+										sortCode : $scope.newBankForm.blz.$viewValue
 									}
+								
+								}).success(function() {
+									$scope.loadData();
+								})
+								}
+							};
+							$scope.del = function() {
+								$http({
+									withCredentials : false,
+									method : 'delete',
+									url : 'http://localhost:8080/bank-swt-neu-vor-14/rest/banktut'+'/'+$scope.id,
+									
 								
 								}).success(function() {
 									$scope.loadData();

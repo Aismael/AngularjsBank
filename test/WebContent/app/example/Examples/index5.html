@@ -21,11 +21,17 @@
 					<option value="name">Alphabetical</option>
 					<option value="id">id</option>
 				</select>
-				
-				name: <input ng-model="name">
-				blz: <input ng-model="blz">
-				<button ng-click="add()">addtestBank</button>
-				<button ng-click="refresh()">refresh</button>
+				<form name="newBankForm">
+					name: <input ng-model="name" placeholder="Enter a Bankname here">
+					
+					<div ng-include='"Templates/blzInput.html"'></div>
+					<button ng-click="add()">addtestBank</button>
+					<button ng-click="refresh()">refresh</button>
+				</form>
+				<p></p>
+				id: <input ng-model="id" type="number"
+					placeholder="Enter a Bankid here">
+				<button ng-click="del()">delete Bank</button>
 			</div>
 
 
@@ -33,12 +39,12 @@
 				<!--Body content-->
 				<p>{{status}}</p>
 				<ul ng-class="banks">
-					
+
 					<li ng-repeat="bank in banks | filter:query | orderBy:orderProp">
 						<span>Name: {{bank.name}}</span>
 						<p>id: {{bank.id}}</p>
 						<p>BLZ: {{bank.sortCode}}</p>
-						
+
 					</li>
 				</ul>
 			</div>
