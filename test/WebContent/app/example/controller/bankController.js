@@ -36,6 +36,7 @@ Bankapp
 										name : $scope.name,
 										sortCode : $scope.blz
 									}
+								
 								}).success(function() {
 									$scope.loadData();
 								})
